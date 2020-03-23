@@ -1,0 +1,66 @@
+buildscript {
+
+
+    ext {
+        //Android
+        androidBuildToolsVersion = "26.0.0"
+        androidMinSdkVersion = 21
+        androidTargetSdkVersion = 26
+        androidCompileSdkVersion = 26
+        kotlinVersion = '1.3.61'
+
+        // Libraries
+        supportLibraryVersion = '26.0.1'
+        rxJavaVersion = '2.0.2'
+        javaxAnnotationVersion = '1.0'
+        javaxInjectionVersion = '1'
+        androidAnnotationsVersion = '21.0.3'
+        koinVersion = '2.1.3'
+
+        // Testing
+        junitVersion = '4.12'
+        assertJVersion = '3.8.0'
+        mockitoKotlinVersion = '1.6.0'
+        mockitoCore = '2.2.28'
+        rxKotlin = '2.0.2'
+        robolectricVersion = '3.4.2'
+        mockitoInlineVersion = '2.13.0'
+
+        domainDependencies = [
+                javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                javaxInject    : "javax.inject:javax.inject:${javaxInjectionVersion}",
+                rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlin}",
+                kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
+
+        ]
+
+        domainTestDependencies = [
+                kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
+                junit        : "junit:junit:${junitVersion}",
+                mockitoKotlin: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+                assertj      : "org.assertj:assertj-core:${assertJVersion}",
+                mockitoCore  : "org.mockito:mockito-core:${mockitoCore}"
+        ]
+
+        dataDependencies = [
+                javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                javaxInject    : "javax.inject:javax.inject:${javaxInjectionVersion}",
+                rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlin}",
+                koin           : "org.koin:koin-core:${koinVersion}",
+                koinExtension  : "org.koin:koin-core-ext:${koinVersion}"
+        ]
+
+        dataTestDependencies = [
+                junit        : "junit:junit:${junitVersion}",
+                mockitoCore  : "org.mockito:mockito-core:${mockitoCore}",
+                koinTest     : "org.koin:koin-test:${koinVersion}",
+                mockitoKotlin: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+                roboletric   : "org.robolectric:robolectric:${robolectricVersion}",
+                assertj      : "org.assertj:assertj-core:${assertJVersion}",
+                mockitoInline: "org.mockito:mockito-inline:${mockitoInlineVersion}"
+
+        ]
+    }
+}

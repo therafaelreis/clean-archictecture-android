@@ -1,0 +1,29 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    def dataDependencies = rootProject.ext.dataDependencies
+    def dataTestDependencies = rootProject.ext.dataTestDependencies
+
+    compile project(":Domain")
+
+    implementation dataDependencies.javaxAnnotation
+    implementation dataDependencies.javaxInject
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.rxKotlin
+    implementation dataDependencies.koin
+    implementation dataDependencies.koinExtension
+
+    testImplementation dataTestDependencies.junit
+    testImplementation dataTestDependencies.mockitoCore
+    testImplementation dataTestDependencies.roboletric
+    testImplementation dataTestDependencies.koinTest
+    testImplementation dataTestDependencies.assertj
+    testImplementation dataTestDependencies.mockitoKotlin
+    testImplementation dataTestDependencies.mockitoInline
+
+
+
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
