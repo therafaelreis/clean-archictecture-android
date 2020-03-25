@@ -2,11 +2,12 @@ package com.therafaelreis.data.repository
 
 import com.therafaelreis.data.model.ProjectEntity
 import io.reactivex.Completable
+import io.reactivex.Flowable
 import io.reactivex.Observable
 
 interface ProjectsDataStore {
 
-    fun getProjects(): Observable<List<ProjectEntity>>
+    fun getProjects(): Flowable<List<ProjectEntity>>
 
     fun getBookmarkedProjects(): Observable<List<ProjectEntity>>
 

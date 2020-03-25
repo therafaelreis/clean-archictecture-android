@@ -23,14 +23,17 @@ class ProjectsDataRepository @Inject constructor(
                 Pair(areCached, isExpired)
             })
             .flatMap {
-                factory.getDataStore(it.first, it.second).getProjects()
+                factory.getDataStore(it.first, it.second).getProjects().toObservable()
+                    .distinctUntilChanged()
             }
             .flatMap { projects ->
-                factory.getCacheDataStore().saveProjects(projects)
+                factory.getCacheDataStore()
+                    .saveProjects(projects)
                     .andThen(Observable.just(projects))
-            }.map {
-                it.map { projectEntity ->
-                    mapper.mapFromEntity(projectEntity)
+            }
+            .map {
+                it.map {
+                    mapper.mapFromEntity(it)
                 }
             }
     }

@@ -4,12 +4,13 @@ import com.therafaelreis.data.model.ProjectEntity
 import com.therafaelreis.data.repository.ProjectsCache
 import com.therafaelreis.data.repository.ProjectsDataStore
 import io.reactivex.Completable
+import io.reactivex.Flowable
 import io.reactivex.Observable
 import javax.inject.Inject
 
 class ProjectsCacheDataStore @Inject constructor(private val projectsCache: ProjectsCache): ProjectsDataStore{
 
-    override fun getProjects(): Observable<List<ProjectEntity>> {
+    override fun getProjects(): Flowable<List<ProjectEntity>> {
         return projectsCache.getProjects()
     }
 

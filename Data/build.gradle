@@ -10,13 +10,12 @@ dependencies {
     implementation dataDependencies.javaxInject
     implementation dataDependencies.rxJava
     implementation dataDependencies.rxKotlin
-    implementation dataDependencies.koin
-    implementation dataDependencies.koinExtension
+    implementation dataDependencies.kotlin
+
 
     testImplementation dataTestDependencies.junit
     testImplementation dataTestDependencies.mockitoCore
     testImplementation dataTestDependencies.roboletric
-    testImplementation dataTestDependencies.koinTest
     testImplementation dataTestDependencies.assertj
     testImplementation dataTestDependencies.mockitoKotlin
     testImplementation dataTestDependencies.mockitoInline
