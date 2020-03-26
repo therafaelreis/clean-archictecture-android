@@ -4,7 +4,7 @@ dependencies {
     def remoteDependencies = rootProject.ext.remoteDependencies
     def remoteTestDependencies = rootProject.ext.remoteTestDependencies
 
-    compile project(':Data')
+    implementation project(':Data')
 
     implementation remoteDependencies.javaxAnnotation
     implementation remoteDependencies.kotlin

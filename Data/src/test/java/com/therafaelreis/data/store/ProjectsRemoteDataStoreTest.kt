@@ -1,6 +1,5 @@
 package com.therafaelreis.data.store
 
-import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import com.therafaelreis.data.model.ProjectEntity
@@ -8,11 +7,9 @@ import com.therafaelreis.data.repository.ProjectsRemote
 import com.therafaelreis.data.test.factory.DataFactory
 import com.therafaelreis.data.test.factory.ProjectFactory
 import io.reactivex.Flowable
-import io.reactivex.Observable
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import java.lang.UnsupportedOperationException
 
 @RunWith(JUnit4::class)
 class ProjectsRemoteDataStoreTest {

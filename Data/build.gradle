@@ -4,7 +4,7 @@ dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
     def dataTestDependencies = rootProject.ext.dataTestDependencies
 
-    compile project(":Domain")
+    implementation project(":Domain")
 
     implementation dataDependencies.javaxAnnotation
     implementation dataDependencies.javaxInject
@@ -19,9 +19,6 @@ dependencies {
     testImplementation dataTestDependencies.assertj
     testImplementation dataTestDependencies.mockitoKotlin
     testImplementation dataTestDependencies.mockitoInline
-
-
-
 }
 
 sourceCompatibility = "1.8"

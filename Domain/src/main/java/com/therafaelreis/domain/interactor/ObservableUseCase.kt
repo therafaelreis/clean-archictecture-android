@@ -22,7 +22,7 @@ abstract class ObservableUseCase<T, in Params> constructor(
         addDisposable(observable.subscribeWith(observer))
     }
 
-    fun diposabe(){
+    fun dispose(){
         disposables.dispose()
     }
 

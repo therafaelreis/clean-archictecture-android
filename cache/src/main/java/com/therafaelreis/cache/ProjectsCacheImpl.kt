@@ -64,8 +64,8 @@ class ProjectsCacheImpl @Inject constructor(
     }
 
     override fun areProjectsCached(): Single<Boolean> {
-        return projectsDatabase.cachedProjectsDAO().getProjects().isEmpty.map {
-            !it
+        return projectsDatabase.cachedProjectsDAO().getProjects().first(emptyList()).map {
+            it.isNotEmpty()
         }
     }
 
@@ -78,9 +78,11 @@ class ProjectsCacheImpl @Inject constructor(
 
     override fun isProjectsCachedExpired(): Single<Boolean> {
         val currentTime = System.currentTimeMillis()
-        val expirationTime = (60 * 10 * 1_000).toLong()
-        return projectsDatabase.configDAO().getConfig().single(Config(lastCacheTime = 0)).map {
-            currentTime - it.lastCacheTime > expirationTime
-        }
+        val expirationInterval =(60 * 10 * 1_000).toLong() // 1 hour
+        return  projectsDatabase.configDAO().getConfig()
+            .toSingle(Config(lastCacheTime = 0))
+            .map{
+                currentTime - it.lastCacheTime > expirationInterval
+            }
     }
 }

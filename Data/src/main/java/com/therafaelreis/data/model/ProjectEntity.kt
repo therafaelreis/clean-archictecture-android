@@ -1,6 +1,6 @@
 package com.therafaelreis.data.model
 
-class ProjectEntity(val id: String,
+data class ProjectEntity(val id: String,
                     val name: String,
                     val fullName: String,
                     val starCount: String,
